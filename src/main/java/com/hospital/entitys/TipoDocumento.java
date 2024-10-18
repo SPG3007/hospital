@@ -1,51 +1,23 @@
 package com.hospital.entitys;
 
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Data;
 
 @Entity
-@Table(name = "TipoDocumento")
+@Builder
+@Table(name = "tipo_documento")
+@Data
 public class TipoDocumento {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column (name = "id_documento")
     private int id;
+    @Column (name = "siglas")
     private String sigla;
+    @Column (name = "descripcion")
     private String descripcion;
 
-
-
-
-    public TipoDocumento() {
-    }
-
-    public TipoDocumento(int id, String sigla, String descripcion) {
-        this.id = id;
-        this.sigla = sigla;
-        this.descripcion = descripcion;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getSigla() {
-        return sigla;
-    }
-
-    public void setSigla(String sigla) {
-        this.sigla = sigla;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 }
 
 
