@@ -95,11 +95,11 @@ public class PersonaServiceImplement implements PersonaService {
                 .build();
     }
 
-    private static TipoDocumentoResponse buildTipoDocumentoResponse(Personas personas) {
+    private static TipoDocumentoResponse buildTipoDocumentoResponse(TipoDocumento tipoDocumento) {
         return TipoDocumentoResponse.builder()
-                .id(personas.getId())
-                .siglas(personas.getFk_tipo_documento().getSigla())
-                .descripcion(personas.getFk_tipo_documento().getDescripcion())
+                .id(tipoDocumento.getId())
+                .siglas(tipoDocumento.getSigla())
+                .descripcion(tipoDocumento.getDescripcion())
                 .build();
     }
 }

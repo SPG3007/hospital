@@ -1,18 +1,21 @@
 package com.hospital.entitys;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 @Entity
 @Builder
 @Table(name = "tipo_documento")
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+
 public class TipoDocumento {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column (name = "id_documento")
-    private int id;
+    private Long id;
     @Column (name = "siglas")
     private String sigla;
     @Column (name = "descripcion")
